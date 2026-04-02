@@ -1,0 +1,46 @@
+diff --git a/cmake/mission_defaults.cmake b/cmake/mission_defaults.cmake
+index 45193fea..45377975 100644
+--- a/cmake/mission_defaults.cmake
++++ b/cmake/mission_defaults.cmake
+@@ -36,6 +36,7 @@ set(MISSION_CORE_MODULES
+     "sbr"
+     "resourceid"
+     "config"
++    "mm"
+ )
+ 
+ # The "MISSION_GLOBAL_APPLIST" is a set of apps/libs that will be built
+diff --git a/modules/es/fsw/src/cfe_es_objtab.c b/modules/es/fsw/src/cfe_es_objtab.c
+index b013079e..6ebdfaf1 100644
+--- a/modules/es/fsw/src/cfe_es_objtab.c
++++ b/modules/es/fsw/src/cfe_es_objtab.c
+@@ -44,6 +44,8 @@
+ #include "cfe_time_core_internal.h"
+ #include "cfe_config_core_internal.h"
+ 
++extern void MM_AppMain(void);
++
+ /*
+ **
+ ** ES_object_table
+@@ -87,7 +89,6 @@ CFE_ES_ObjectTable_t CFE_ES_ObjectTable[CFE_PLATFORM_ES_OBJECT_TABLE_SIZE] = {
+     {.ObjectType               = CFE_ES_FUNCTION_CALL,
+      .ObjectName               = "CFE_FS_EarlyInit",
+      .FuncPtrUnion.FunctionPtr = CFE_FS_EarlyInit},
+-
+     /*
+     ** Spare entries
+     */
+@@ -102,7 +103,11 @@ CFE_ES_ObjectTable_t CFE_ES_ObjectTable[CFE_PLATFORM_ES_OBJECT_TABLE_SIZE] = {
+      .FuncPtrUnion.MainTaskPtr = CFE_EVS_TaskMain,
+      .ObjectPriority           = CFE_PLATFORM_EVS_START_TASK_PRIORITY,
+      .ObjectSize               = CFE_PLATFORM_EVS_START_TASK_STACK_SIZE},
+-    {.ObjectType = CFE_ES_NULL_ENTRY},
++    {.ObjectType               = CFE_ES_CORE_TASK,
++     .ObjectName               = "MM_APP",
++     .FuncPtrUnion.MainTaskPtr = MM_AppMain,
++     .ObjectPriority           = 80 ,
++     .ObjectSize               = 16384},
+     {.ObjectType               = CFE_ES_CORE_TASK,
+      .ObjectName               = "CFE_SB",
+      .FuncPtrUnion.MainTaskPtr = CFE_SB_TaskMain,

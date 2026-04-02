@@ -1,0 +1,37 @@
+diff --git a/sample_defs/arch_build_custom.cmake b/sample_defs/arch_build_custom.cmake
+index 194ec5b8..09e0c220 100644
+--- a/sample_defs/arch_build_custom.cmake
++++ b/sample_defs/arch_build_custom.cmake
+@@ -29,11 +29,10 @@ add_compile_options(
+     -std=c99                    # Target the C99 standard (without gcc extensions)
+     -pedantic                   # Issue all the warnings demanded by strict ISO C
+     -Wall                       # Warn about most questionable operations
+-    -Wstrict-prototypes         # Warn about missing prototypes
+     -Wwrite-strings             # Warn if not treating string literals as "const"
+     -Wpointer-arith             # Warn about suspicious pointer operations
+-    -Werror                     # Treat warnings as errors (code should be clean)
+     -Wno-format-truncation      # Inhibit printf-style format truncation warnings
+-    -Wno-stringop-truncation    # Inhibit string operation truncation warnings
++    -Wno-strict-prototypes
++    -Wno-newline-eof
+ )
+ 
+diff --git a/sample_defs/mission_build_custom.cmake b/sample_defs/mission_build_custom.cmake
+index 01e940e6..971ccf19 100644
+--- a/sample_defs/mission_build_custom.cmake
++++ b/sample_defs/mission_build_custom.cmake
+@@ -14,11 +14,11 @@ add_compile_options(
+     -std=c99                # Target the C99 standard (without gcc extensions)
+     -pedantic               # Issue all the warnings demanded by strict ISO C
+     -Wall                   # Warn about most questionable operations
+-    -Wstrict-prototypes     # Warn about missing prototypes
++    -Wno-strict-prototypes     # Warn about missing prototypes
+     -Wwrite-strings         # Warn if not treating string literals as "const"
+     -Wpointer-arith         # Warn about suspicious pointer operations
+     -Wcast-align            # Warn about casts that increase alignment requirements
+-    -Werror                 # Treat warnings as errors (code should be clean)
++    -Wno-newline-eof                
+ )
+ 
+ # The _XOPEN_SOURCE directive is required for glibc to enable conformance with the
+

@@ -1,0 +1,46 @@
+{
+    "vulnerabilities": [
+        {
+            "cve-id": "CVE-MM-0001",
+            "cve-description": "The `cFS` module `mm` v2.5.99 contains the vulnerable code weakness CWE-123 which allows the user to write arbitrary data to areas of memory outside the scope of a policy. In this version of the module, the command `MM_DumpMemToFileCmd`, allows the user to input various parameters including source address and address range. These values are not validated to ensure they are in a valid memory region. These values are later used in a memcpy, allowing the user to copy protected memory outside the scope of the cFS process.",
+            "package-name": "mm",
+            "package-version": "2.5.99",
+            "cwe-id": "123",
+            "cwe-name": "Write-what-where Condition",
+            "affected-function": "MM_DumpMemToFileCmd",
+            "affected-file": "mm_dump.c"
+        },
+
+        {
+            "cve-id": "CVE-MM-0002",
+            "cve-description": "The `cFS` module `mm` v2.5.99 contains the vulnerable code weakness CWE-123 which allows the user to write arbitrary data to areas of memory outside the scope of a policy. In this version of the module, the command `MM_DumpInEventCmd`, allows the user to input various parameters including source address and address range. These values are not validated to ensure they are in a valid memory region. These values are later used in a memcpy, allowing the user to copy protected memory outside the scope of the cFS process.",
+            "package-name": "mm",
+            "package-version": "2.5.99",
+            "cwe-id": "123",
+            "cwe-name": "Write-what-where Condition",
+            "affected-function": "MM_DumpInEventCmd",
+            "affected-file": "mm_dump.c"
+        },
+        {
+            "cve-id": "CVE-MM-0003",
+            "cve-description": "The `cFS` module `mm` v2.5.99 contains the vulnerable code weakness CWE-123 which allows the user to write arbitrary data to areas of memory outside the scope of a policy. In this version of the module, the `MM_FillMemCmd` command is designed to allow the user to fill a memory block directly with a user-defined pattern. This can cause a denial of service by crashing the program due to invalid memory access.",
+            "package-name": "mm",
+            "package-version": "2.5.99",
+            "cwe-id": "123",
+            "cwe-name": "Write-what-where Condition",
+            "affected-function": "MM_FillMemCmd",
+            "affected-file": "mm_load.c"
+        },
+        {
+            "cve-id": "CVE-MM-0004",
+            "cve-description": "The `cFS` module `mm` v2.5.99 contains the vulnerable code weakness CWE-123 which allows the user to write arbitrary data to areas of memory outside the scope of a policy. In this version of the module, the `MM_LoadMemWIDCmd` command contains a similar vulnerability to the previously described CVE for `MM_FillMemCmd`. The user can input an invalid memory range, causing the program to access invalid memory when loading data, causing a segmentation fault.",
+            "package-name": "mm",
+            "package-version": "2.5.99",
+            "cwe-id": "123",
+            "cwe-name": "Write-what-where Condition",
+            "affected-function": "MM_LoadMemWIDCmd",
+            "affected-file": "mm_load.c"
+        }
+
+    ]
+}

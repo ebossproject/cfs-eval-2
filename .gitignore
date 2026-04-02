@@ -1,0 +1,11 @@
+build.sh
+clean.sh
+run.sh
+build/
+logs/
+build.log
+docker.log
+__pycache__/
+*.pyc
+*:Zone.Identifier
+*.Identifier

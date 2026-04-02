@@ -1,0 +1,25 @@
+{
+    "reachability_results": [
+        {
+            "cve-id": "CVE-MM-0001",
+            "classification": "Reachable",
+            "justification": ""
+        },
+
+        {
+            "cve-id": "CVE-MM-0002",
+            "classification": "Reachable",
+            "justification": ""
+        },
+        {
+            "cve-id": "CVE-MM-0003",
+            "classification": "Unreachable",
+            "justification": ""
+        },
+        {
+            "cve-id": "CVE-MM-0004",
+            "classification": "Unreachable",
+            "justification": ""
+        }
+    ]
+}

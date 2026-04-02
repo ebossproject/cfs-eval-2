@@ -1,0 +1,18 @@
+{
+  "name": "cfs",
+  "version-string": "equuleus-rc1",
+  "description": "The Core Flight System (cFS) is a generic flight software architecture framework",
+  "homepage": "https://github.com/nasa/cFS",
+  "license": "Apache-2.0",
+  "dependencies": [
+    "mm",
+    {
+      "name": "vcpkg-cmake",
+      "host": true
+    },
+    {
+      "name": "vcpkg-cmake-config",
+      "host": true
+    }
+  ]
+}

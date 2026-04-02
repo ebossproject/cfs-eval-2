@@ -1,0 +1,17 @@
+{
+  "name": "mm",
+  "version-string": "2.5.99",
+  "description": "The Memory Manager application (MM) is a core Flight System (cFS) application that is a plug in to the Core Flight Executive (cFE) component of the cFS.",
+  "homepage": "https://github.com/nasa/MM",
+  "license": "Apache-2.0",
+  "dependencies": [
+    {
+      "name": "vcpkg-cmake",
+      "host": true
+    },
+    {
+      "name": "vcpkg-cmake-config",
+      "host": true
+    }
+  ]
+}
